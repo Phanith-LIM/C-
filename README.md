@@ -1,12 +1,17 @@
 # CPP
-#### **Exercises 1 :** Ask a user to enter an integer and displays the average of the digits in the integer. For example, the 
+#### **Exercises 1 :**
+Ask a user to enter an integer and displays the average of the digits in the integer. For example, the 
 average of the digits in 936 is 6.0 ((9 + 3 + 6) / 3).<br>
-Ouput:<br>
+Output:<br>
 ```{r}
 Enter numer : 1231245
 The average of the digits in 1231245 is 2.57143
 ```
-#### **Exercises 2 :** <br>
+#### **Exercises 2 :**
+A number is a palindrome if its reversal is the same as itself. An even palindrome number is a number 
+which is even and also a palindrome. Write a program that displays the first 50  positive even 
+palindrome numbers ten per line.
+Output:<br>
 ```{r}
 0       2       4       6       8       22      44      66      88      202
 212     222     232     242     252     262     272     282     292     404
