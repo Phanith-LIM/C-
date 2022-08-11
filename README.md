@@ -1,10 +1,12 @@
 # CPP
 
 #### **Exercises 1 :** <br>
+
 ```json
 Enter numer : 1231245
 The average of the digits in 1231245 is 2.57143
 ```
+
 #### **Exercises 2 :** <br>
 ```json
 0       2       4       6       8       22      44      66      88      202
