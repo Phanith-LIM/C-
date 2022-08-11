@@ -1,7 +1,7 @@
 # CPP
-Ask a user to enter an integer and displays the average of the digits in the integer. For example, the 
+#### **Exercises 1 :** Ask a user to enter an integer and displays the average of the digits in the integer. For example, the 
 average of the digits in 936 is 6.0 ((9 + 3 + 6) / 3).<br>
-#### **Exercises 1 :** <br>
+Ouput:<br>
 ```{r}
 Enter numer : 1231245
 The average of the digits in 1231245 is 2.57143
