@@ -1,12 +1,11 @@
 # CPP
-
+<p>Ask a user to enter an integer and displays the average of the digits in the integer. For example, the 
+average of the digits in 936 is 6.0 ((9 + 3 + 6) / 3).</p>
 #### **Exercises 1 :** <br>
-
 ```{r}
 Enter numer : 1231245
 The average of the digits in 1231245 is 2.57143
 ```
-
 #### **Exercises 2 :** <br>
 ```{r}
 0       2       4       6       8       22      44      66      88      202
