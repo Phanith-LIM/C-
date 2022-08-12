@@ -60,8 +60,10 @@ int main(){
     isPass5 = isPass1 && isPass2 && isPass3 && isPass4;
     if(isPass5){
         std::cout << "\x1b[32m Passed Final Test : ✅" << std::endl;
+        std::cout << "\x1b[32m Valid Password" << std::endl;
     }else{
         std::cout << "\x1b[31m Failed Final Test : ❌" <<std::endl;
+        std::cout << "\x1b[31m Valid Password" <<std::endl;
     }
     return 0;
 }
