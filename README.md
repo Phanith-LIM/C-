@@ -22,15 +22,14 @@ Output:<br>
 #### **Exercises 2 :**
 (Check Valid Password) Some websites impose certain rules for passwords. Suppose the rules are as 
 follows:<br>
-> • A password must have exactly 8 characters.<br>
-> • A password must consist of only digits and letters.<br>
-> • A password must always start with a digit.<br>
-> • A password must contain at least one uppercase letter.<br>
-
+• A password must have exactly 8 characters.<br>
+• A password must consist of only digits and letters.<br>
+• A password must always start with a digit.<br>
+• A password must contain at least one uppercase letter.<br>
 Write a program that asks a user to enter a password and displays if the password entered is valid or 
 invalid. If it is invalid, let the user know why.<br>
 Output:<br>
-```json
+```{r}
 Enter your password : 23Phanith
  Passed Test 1 : ✅
  Passed Test 2 : ✅
@@ -39,7 +38,7 @@ Enter your password : 23Phanith
  Passed Final Test : ✅
  Valid Password
 ```
-```json
+```{r}
 Enter your password : 1232asd 
  Failed Test 1 : ❌
  Failed Final Test : ❌
