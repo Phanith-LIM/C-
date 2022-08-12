@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
-#include <cstring>
 #include <algorithm>
-#include <cctype>
 int main(){
     std::string password;
     std::cout << "Enter your password : ";
