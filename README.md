@@ -19,3 +19,29 @@ Output:<br>
 616     626     636     646     656     666     676     686     696     808
 818     828     838     848     858     868     878     888     898     2002
 ```
+#### **Exercises 2 :**
+(Check Valid Password) Some websites impose certain rules for passwords. Suppose the rules are as 
+follows:<br>
+> • A password must have exactly 8 characters.<br>
+> • A password must consist of only digits and letters.<br>
+> • A password must always start with a digit.<br>
+> • A password must contain at least one uppercase letter.<br>
+
+Write a program that asks a user to enter a password and displays if the password entered is valid or 
+invalid. If it is invalid, let the user know why.<br>
+Output:<br>
+```json
+Enter your password : 23Phanith
+ Passed Test 1 : ✅
+ Passed Test 2 : ✅
+ Passed Test 3 : ✅
+ Passed Test 4 : ✅
+ Passed Final Test : ✅
+ Valid Password
+```
+```json
+Enter your password : 1232asd 
+ Failed Test 1 : ❌
+ Failed Final Test : ❌
+ Valid Password
+```
