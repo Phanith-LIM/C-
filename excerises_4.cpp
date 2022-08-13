@@ -5,8 +5,8 @@ int main(){
     bool locker[456];
     int numLocker = 456;
     int keepIndex;
-    int isLive = 0;
-    int isDead = 0;
+    int numOpened = 0;
+    int numClosed = 0;
 
     cout << "\nLocker Puzzle : Squid Game";
     for (int i = 0 ; i < numLocker ; i++){
@@ -27,18 +27,30 @@ int main(){
         }
     }
         
-    //Display result
+    //Display All
     for (int i = 0; i < numLocker ; i++){
         if(i % 10 == 0) cout << "\n";
         if (locker[i]) {
             cout <<"\x1b[32m"<<i+1 <<"🏆"<<"\t";
-            isLive++;
+            numOpened++;
         }
+        
         else {
             cout << "\x1b[31m"<<i+1 <<"💀"<<"\t";
-            isDead++;
+            numClosed++;
         }
     }
-    cout <<"\x1b[32m\n\nALive Players : "<<isLive<<endl;
-    cout <<"\x1b[31mDead Players : "<<isDead<<endl;
+    // Display result
+    // for (int i = 0; i < numLocker ; i++){
+    //     if (locker[i]) {
+    //         if(numOpened % 10 == 0) cout << "\n";
+    //         cout <<"\x1b[32m"<<i+1 <<"\t";
+    //         numOpened++;
+    //     }
+    //     else {
+    //         numClosed++;
+    //     }
+    // }
+    cout <<"\x1b[32m\n\nOpened : "<<numOpened<<endl;
+    cout <<"\x1b[31mClosed : "<<numClosed<<endl;
 }
