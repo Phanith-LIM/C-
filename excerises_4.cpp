@@ -28,29 +28,30 @@ int main(){
     }
         
     //Display All
-    for (int i = 0; i < numLocker ; i++){
-        if(i % 10 == 0) cout << "\n";
-        if (locker[i]) {
-            cout <<"\x1b[32m"<<i+1 <<"🏆"<<"\t";
-            numOpened++;
-        }
-        
-        else {
-            cout << "\x1b[31m"<<i+1 <<"💀"<<"\t";
-            numClosed++;
-        }
-    }
-    // Display result
     // for (int i = 0; i < numLocker ; i++){
+    //     if(i % 10 == 0) cout << "\n";
     //     if (locker[i]) {
-    //         if(numOpened % 10 == 0) cout << "\n";
-    //         cout <<"\x1b[32m"<<i+1 <<"\t";
+    //         cout <<"\x1b[32m"<<i+1 <<"🏆"<<"\t";
     //         numOpened++;
     //     }
+    //     
     //     else {
+    //         cout << "\x1b[31m"<<i+1 <<"💀"<<"\t";
     //         numClosed++;
     //     }
     // }
+    
+    // Display result
+    for (int i = 0; i < numLocker ; i++){
+        if (locker[i]) {
+            if(numOpened % 10 == 0) cout << "\n";
+            cout <<"\x1b[32m"<<i+1 <<"\t";
+            numOpened++;
+        }
+        else {
+            numClosed++;
+        }
+    }
     cout <<"\x1b[32m\n\nOpened : "<<numOpened<<endl;
     cout <<"\x1b[31mClosed : "<<numClosed<<endl;
 }
