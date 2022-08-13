@@ -44,3 +44,27 @@ Enter your password : 1232asd
  Failed Final Test : ❌
  Valid Password
 ```
+#### **Exercises 4 :**
+<p>(Game: locker puzzle) In the first game of the Squid Game, there are 456 lockers and 456 players. 
+Each player has to pick one locker number, then enters a builder. When the game starts, all the 
+lockers are closed. As the players enter the building, the first player (P1) has to open every locker. 
+Then the second player (P2) begins with the second locker (L2), and has to close every other locker 
+(L2 to L456). Player P3 begins with the third locker (L3) and has to change (closes the locker if it was 
+open, and open it if it was closed) every third locker (L3, L6, …). Player P4 begins with locker L4 
+and changes every fourth locker (L4, L8, …). Player P5 starts with L5 and changes every fifth locker (L5, L10, …), and so on, until Player P456 changes L456.</p><br>
+<p>After all the players have passed through the building and changed the lockers, the game ends. The players whose locker closed will be killed.</p><br>
+
+<p>Write a program to display all open locker numbers separated by exactly one space and ten per line. 
+How many open lockers in total? (Hint: Use an array of 456 bool elements, each of which indicates 
+whether a locker is open (true) or closed (false).)</p><br>
+Output:<br>
+
+```{r}
+Locker Puzzle : Squid Game
+1       4       9       16      25      36      49      64      81      100
+121     144     169     196     225     256     289     324     361     400
+441
+
+Opened : 21
+Closed : 435
+```
