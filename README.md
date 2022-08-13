@@ -19,7 +19,7 @@ Output:<br>
 616     626     636     646     656     666     676     686     696     808
 818     828     838     848     858     868     878     888     898     2002
 ```
-#### **Exercises 2 :**
+#### **Exercises 3 :**
 (Check Valid Password) Some websites impose certain rules for passwords. Suppose the rules are as 
 follows:<br>
 • A password must have exactly 8 characters.<br>
