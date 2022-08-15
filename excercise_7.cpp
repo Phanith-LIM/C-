@@ -24,7 +24,6 @@ int main(){
                 Bullets[0] = Bullets[numRandom];
                 Bullets[numRandom] = swap;
             }
-            //If 
             //Check isBullets[0] is 1( have a bullets) so iBullets[0] will change to 1
             for (int k = 0; k < numPlayer; k++)
             {
