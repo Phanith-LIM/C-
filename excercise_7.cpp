@@ -1,7 +1,7 @@
 #include <iostream>
 int main(){
     int numPlayer = 6;
-    int rounds = 10;
+    int rounds = 1000;
     int numRandom;
     bool swap = 0;
     int numDead[6] = {0,0,0,0,0,0};
