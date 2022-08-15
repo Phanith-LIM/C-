@@ -9,11 +9,13 @@ int main(){
     //Bullets in Gun start firing from Bullets[0]
     for (int p = 0; p < rounds ; p++){
         //Gun's round barrel
+        //New round it's mean roll the barrel
         bool Bullets[6] = {1,1,1,1,1,0};
         std::cout <<"\x1b[37mRound "<< p + 1<< std::endl;
         for (int i = 0; i < numPlayer; i++)
         {
             std::cout << "\x1b[37mP"<<i+1<<":\t";
+            //If next Player the barrel will roll
             //Swap index to make Random Boolean is mean Bullets is Random
             for (int j = 0; j < numPlayer; j++)
             {
@@ -22,7 +24,8 @@ int main(){
                 Bullets[0] = Bullets[numRandom];
                 Bullets[numRandom] = swap;
             }
-            //Check isBullets[0] is 1( have a bullets)
+            //If 
+            //Check isBullets[0] is 1( have a bullets) so iBullets[0] will change to 1
             for (int k = 0; k < numPlayer; k++)
             {
                 if(Bullets[0] == 1) {
