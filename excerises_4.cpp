@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 int main(){
     //open(true) or close(false)
@@ -13,47 +14,28 @@ int main(){
             for(int j = 0; j < numLocker; j++){
                 locker[j] = true;
             }
-        }else if (i >= 1 ){
-            /*
-                if i = 1 => j = 1
-                after first loop j = 1 + 2 = 3;
-            */
+        }else if (i == 1 ){
+            for(int j = i; j < numLocker; j++ ){
+                locker[j] = !locker[j];
+            }
+        }else if (i >= 2 ){
             for(int j = i; j < numLocker; j = j + i + 1 ){
-                if(locker[j]) {
-                    locker[j] = false;
-                }
-                else {
-                    locker[j] = true;
-                }
+                locker[j] = !locker[j];
             }
         }
     }
-        
-    //Display All
+    // Display result
     for (int i = 0; i < numLocker ; i++){
-        if(i % 10 == 0) cout << "\n";
         if (locker[i]) {
-            cout <<"\x1b[32m"<<i+1<<"\t";
+            if(numOpened % 10 == 0) cout << "\n";
+            printf("\x1b[32m%5d",(i+1));
             numOpened++;
         }
-        
         else {
-            cout << "\x1b[31m"<<i+1 <<"\t";
             numClosed++;
         }
     }
-    
-    // Display result
-    // for (int i = 0; i < numLocker ; i++){
-    //     if (locker[i]) {
-    //         if(numOpened % 10 == 0) cout << "\n";
-    //         cout <<"\x1b[32m"<<i+1 <<"\t";
-    //         numOpened++;
-    //     }
-    //     else {
-    //         numClosed++;
-    //     }
-    // }
-    cout <<"\x1b[32m\n\nOpened : "<<numOpened<<endl;
-    cout <<"\x1b[31mClosed : "<<numClosed<<endl;
+    cout <<"\x1b[37m\n\nLOCKER" <<"\n";
+    cout <<"\x1b[32m    Opened : "<<numOpened<<endl;
+    cout <<"\x1b[31m    Closed : "<<numClosed<<endl;
 }
