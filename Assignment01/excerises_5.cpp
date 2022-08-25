@@ -26,10 +26,7 @@ int main(){
     }else if(Bank[4] < limitAsset){
         Bank[0] = Bank[0] - 320.5;
     }
-
-    // for(int i = 0; i < 5 ; i++ ){
-    //     cout << " Total Asset Bank "<<i<<" : "<<Bank[i]<<endl;
-    // }
+    
     for(int i = 0; i < 5; i++ ){
         if (Bank[i] < limitAsset) cout << "\x1b[31m BANK "<<i<<" : "<<"Unsafe"<<endl;
     }

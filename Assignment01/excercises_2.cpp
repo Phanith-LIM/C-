@@ -8,8 +8,7 @@ int main()
     for(int i = 0; i < 10000; i++){
         num = i;
         rev = 0;
-        do
-        {
+        do{
             digit = num % 10;
             rev = (rev * 10) + digit;
             num = num / 10;
