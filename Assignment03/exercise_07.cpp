@@ -43,17 +43,3 @@ int main(){
     }
     return 0;
 }
-    // for(int i = row; i < row + 1; i++){
-    //     for (int j = 1; j < time; j++){
-    //         std::cout << *(arr_ptr + i*row - j*3) <<"\t";
-    //     }
-    //     time--;
-    //     std::cout <<std::endl;
-    // }
-    // for(int i = row + 1; i < row + 2; i++){
-    //     for (int j = 2; j < time + 1; j++){
-    //         std::cout << *(arr_ptr + i*row - j*3) <<"\t";
-    //     }
-    //     time--;
-    //     std::cout <<std::endl;
-    // }
