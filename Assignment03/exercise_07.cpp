@@ -30,7 +30,7 @@ int main(){
         14      11      8
         15      12
         16
-    */
+    */ 
     for(int k = 0; k < row - 1; k++){
         for(int i = row + k; i < row + (k + 1); i++)
         {

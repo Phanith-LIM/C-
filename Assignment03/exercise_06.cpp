@@ -11,13 +11,13 @@ int main(){
     //size
     int row = 5;
     int column = 4;
-
+ 
     //pointer to array
     int *arr_ptr = &array[0][0];
 
     for(int i = 0; i < row; i++){
         for (int j = 0; j < column; j++){
-            std::cout << *(arr_ptr + j*row + i) <<"\t";
+            std::cout << *(arr_ptr + i*row + j) <<"\t";
         }
         std::cout << std::endl;
     }

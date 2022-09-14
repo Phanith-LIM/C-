@@ -1,5 +1,4 @@
 #include <iostream>
-
 int main(){
     int array[] = {99,2,3,4,5,306,7,8,9,10};
     int sizeArray = sizeof(array) / sizeof(array[0]);
@@ -18,3 +17,4 @@ int main(){
     std::cout <<"The smallest : "<<smallest<<std::endl;
     return 0;
 }
+

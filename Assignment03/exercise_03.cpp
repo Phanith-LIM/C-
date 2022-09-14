@@ -1,9 +1,14 @@
 #include <iostream>
 int count_word_in_str (std::string *str_ptr, std::string *word_ptr);
 int main(){
-    std::string str = "I Love Love Love You";
-    std::string word = "Love";
-    std::cout << " Time: "<<count_word_in_str(&str, &word) <<std::endl;
+    std::string str;
+    std::string word;
+    std::cout << "Enter the sentence : ";
+    getline(std::cin, str);
+    std::cout << "Enter the the : ";
+    getline(std::cin, word);
+
+    std::cout << " Time: "<< count_word_in_str(&str, &word) <<std::endl;
     return 0;
 }
 int count_word_in_str(std::string *str_ptr, std::string *word_ptr){
