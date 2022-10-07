@@ -2,17 +2,18 @@
 #include <cstdlib>
 int main(){
     int sizeArr;
-    int *numArr = (int *)malloc(sizeArr * sizeof(int));
-    if (numArr == NULL) {
-        std::cout << "Error: out of memory."; 
-        exit(1);
-    }
     int numEven = 0;
     int numOdd = 0;
 
     std::cout << "Enter size : ";
     std::cin >> sizeArr;
 
+    int *numArr = (int *)malloc(sizeArr * sizeof(int));
+    if (numArr == NULL) {
+        std::cout << "Error: out of memory."; 
+        exit(1);
+    }
+    
     for (int i = 0; i < sizeArr; i++){
         std::cout << "Enter integer "<<i + 1<<" : ";
         std::cin >> numArr[i];

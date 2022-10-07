@@ -14,7 +14,10 @@ int main(){
         bool isDistinct = true;
         std::cout << "Enter integer : ";
         std::cin >> numberInt;
-        if (numberInt == 0) isZero = true;
+        if (numberInt == 0) {
+            isZero = true;
+            break;
+        };
         if(i == 0){
             numDistinct[i] = numberInt;
         }
@@ -25,7 +28,7 @@ int main(){
                     break;
                 }
             }
-            if (isDistinct){
+            if (isDistinct == true){
                 //extend size array
                 increment++;
                 numDistinct = (int*)realloc(numDistinct, increment * sizeof(int));
@@ -40,7 +43,7 @@ int main(){
         }
     }
     std::cout << "Distinct Elements : ";
-    for(int i = 0; i < increment ; i++){
+    for(int i = 0; i < increment; i++){
         std::cout << numDistinct[i] << " ";
     }
     std::cout << std::endl;

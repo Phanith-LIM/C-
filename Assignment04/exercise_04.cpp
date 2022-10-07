@@ -1,14 +1,16 @@
 #include <iostream>
 int main(){
     int *ptr_int = (int *)malloc(1);
-    int i = 0;
     bool isZero = false;
     int increment = 1;
     std::cout << "ASCENDING ORDER OF INTEGER (Enter 0 to stop)" << std::endl;
     for(int i = 0; !isZero ; i++ ){
         std::cout << "Enter integer : ";
         std::cin >> ptr_int[i];
-        if (ptr_int[i] == 0) isZero = true;
+        if (ptr_int[i] == 0) {
+            isZero = true;
+            break;
+        };
         increment++;
         ptr_int = (int*)realloc(ptr_int, increment * sizeof(int));
         if (ptr_int == NULL) {

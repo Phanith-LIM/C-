@@ -15,6 +15,7 @@ int main(){
     int sizeCountry = 1;
     int increment = 0;
     bool isDone = false;
+    std::cout << "SORTS COUNTRY WITH ALPHABETICALLY (Enter Done to stop)"<< std::endl;
     for (int i = 0; !isDone ; i++) { 
         namCountry = (char *)malloc(1);
         std::cout << "Enter Country : ";
@@ -49,7 +50,7 @@ int main(){
             }
         }
     }
-    std::cout << increment << " ";
+    // std::cout << increment << " ";
     for(int round = 1; round < increment; round++){
         for(int i = 0; i < increment - round; i++){
             //similar static_cast<int> 

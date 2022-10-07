@@ -13,9 +13,9 @@ int main(){
     char subChar;
     std::cout << "Enter size : ";
     std::cin >> sizeArr;
-
+    std::cout << "DISPLAY CONSONANTS " << std::endl;
     for (int i = 0; i < sizeArr; i++){
-        std::cout << "Enter Alphabet " ​<< i + 1 <<" : ";
+        std::cout << "Enter Alphabet " << i + 1 <<" : ";
         std::cin >> subChar;
         if(isalpha(subChar) == true){
             if((subChar == 'a' || subChar == 'e' || subChar == 'i' || subChar == 'o' || subChar == 'u') || (subChar == 'A' || subChar == 'E' || subChar == 'I' || subChar == 'O' || subChar == 'U')){

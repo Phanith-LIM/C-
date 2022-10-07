@@ -7,7 +7,7 @@ int main(){
     }
     int sumInt = 0;
     int increment = 1;
-    for (int i = 0; sumInt < 100; i++){
+    for (int i = 0; sumInt <= 100; i++){
         std::cout << "Enter integer : ";
         std::cin >> ptr_int[i];
         increment++;
@@ -20,7 +20,7 @@ int main(){
     }
     std::cout << "SUM : " << sumInt << std::endl;
     std::cout << "Integer : ";
-    for(int i = 0; i < increment; i++){
+    for(int i = 0; i < increment - 1; i++){
         std::cout << *(ptr_int + i) << " ";
     }
     std::cout << std::endl;
