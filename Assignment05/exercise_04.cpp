@@ -3,53 +3,6 @@ struct DateJoin {
     int years;
     int months;
     int days;
-    bool isNotAllow;
-    bool isNotTwelveMonth;
-    void getDateJoin(){
-        do{
-            isNotAllow = false;
-            isNotTwelveMonth = false;
-            std::cout << "JoinDate: ";
-            std::cin >> years >> months >> days;
-            if(months < 1 || months > 12){
-                std::cout << "\t[Error : Please Enter Month between January to December (1 - 12)]"<<std::endl;
-                isNotAllow = true;
-                isNotTwelveMonth = true;
-            }
-            if(!isNotTwelveMonth){
-                if((months == 9) || (months == 4) || (months == 6) || (months == 9) || (months == 2)) {
-                    if(months == 2){
-                        if(years % 4 == 0){
-                            if(days > 29){
-                                std::cout << "\t[Error : "<< years <<"is a Leap Years, The Limit February is 29 days]"<<std::endl;
-                                isNotAllow = true;
-                                isNotTwelveMonth = true;
-                            }
-                        }else {
-                            if(days > 28){
-                                std::cout << "\t[Error : "<< years <<" is not a Leap Years, The Limit of February is 28 days]"<<std::endl;
-                                isNotAllow = true;
-                                isNotTwelveMonth = true;
-                            }
-                        }    
-                    }
-                    if((months == 4) || (months == 6) || (months == 9)){
-                        if(days > 30) {
-                            std::cout << "\t[Error : Day in "<< months <<" is allow limit 30 day]"<<std::endl;
-                            isNotAllow = true;
-                            isNotTwelveMonth = true;
-                        };
-                    }
-                }else {
-                    if(days > 31) {
-                        std::cout << "\t[Error : Day in "<< months <<" is allow limit 31 day]"<<std::endl;
-                        isNotAllow = true;
-                        isNotTwelveMonth = true;
-                    };
-                }
-            }
-        }while (isNotTwelveMonth && isNotAllow);
-    };
 };
 struct Employees {
     int id;
@@ -57,19 +10,6 @@ struct Employees {
     double salary;
     std::string department;
     DateJoin date;
-    void getEmployees() {
-        std::cout << "ID: ";
-        std::cin >> id;
-        std::cout << "Name: ";
-        std::cin >> name;
-        fflush(stdin);
-        std::cout << "Salary: ";
-        std::cin >> salary;
-        std::cout << "Department: ";
-        std::cin >> department;
-        fflush(stdin);
-        date.getDateJoin();
-    };
     void displayEmployees(){
         std::cout <<"---------------------------------------------------------------"<< std::endl;
         std::cout <<"Id:\t\t" << id << std::endl;
@@ -79,6 +19,71 @@ struct Employees {
         std::cout <<"Salary:\t\t" << salary << std::endl;
     }
 };
+DateJoin getDateJoin() {
+    DateJoin date;
+    bool isNotAllow;
+    bool isNotTwelveMonth;
+    do{
+        isNotAllow = false;
+        isNotTwelveMonth = false;
+        std::cout << "JoinDate: ";
+        std::cin >> date.years >> date.months >> date.days;
+        if( date.months < 1 or  date.months > 12){
+            std::cout << "\t[Error : Please Enter Month between January to December (1 - 12)]"<<std::endl;
+            isNotAllow = true;
+            isNotTwelveMonth = true;
+        }
+        if(!isNotTwelveMonth){
+            if((date.months == 9) or ( date.months == 4) or ( date.months == 6) or ( date.months == 2)) {
+                if( date.months == 2){
+                    if(date.years % 4 == 0){
+                        if(date.days > 29){
+                            std::cout << "\t[Error : "<< date.years <<"is a Leap Years, The Limit February is 29 days]"<<std::endl;
+                            isNotAllow = true;
+                            isNotTwelveMonth = true;
+                        }
+                    }else {
+                        if(date.days > 28){
+                            std::cout << "\t[Error : "<< date.years <<" is not a Leap Years, The Limit of February is 28 days]"<<std::endl;
+                            isNotAllow = true;
+                            isNotTwelveMonth = true;
+                        }
+                    }    
+                }
+                if((date.months == 4) or (date.months == 6) or (date.months == 9)){
+                    if(date.days > 30) {
+                        std::cout << "\t[Error : Day in "<< date.months <<" is allow limit 30 day]"<<std::endl;
+                        isNotAllow = true;
+                        isNotTwelveMonth = true;
+                    };
+                }
+            }else {
+                if(date.days > 31) {
+                    std::cout << "\t[Error : Day in "<< date.months <<" is allow limit 31 day]"<<std::endl;
+                    isNotAllow = true;
+                    isNotTwelveMonth = true;
+                };
+            }
+        }
+    }while (isNotTwelveMonth && isNotAllow);
+    return date;
+};
+Employees getEmployees(){
+    Employees employees;
+    std::cout << "ID: ";
+    std::cin >> employees.id;
+    fflush(stdin);
+    std::cout << "Name: ";
+    getline(std::cin,employees.name);
+    std::cout << "Salary: ";
+    std::cin >> employees.salary;
+    fflush(stdin);
+    std::cout << "Department: ";
+    getline(std::cin,employees.department);
+    fflush(stdin);
+    employees.date = getDateJoin();
+    return employees;
+}
 void printAllInfor(Employees employees[], int n);
 void printByAscendingSalary(Employees employees[], int n);
 void printByAscendingDate(Employees employees[], int n);
@@ -91,6 +96,7 @@ int main(){
         printf("Error! memory not allocated.");
         exit(1);
     }
+    //Get number of employees
     do {
         std::cout << "Enter Number of Employees: ";
         std::cin >> (*n);
@@ -103,10 +109,11 @@ int main(){
         printf("Error! memory not allocated.");
         exit(1);
     }
+    //Input data employees
     for(int i = 0; i < *n ; i++){
-        std::cout << "[Employee "<<i<<"]"<<std::endl;
-        employees[i].getEmployees();
-        std::cout << std::endl;
+        std::cout << "[Employee "<< i + 1 <<"]"<<std::endl;
+        employees[i] = getEmployees();
+        fflush(stdin);
     }
     std::cout << "a.Display the employee information."<<std::endl;
     std::cout << "b.Display the employee information in ascending order according to their salary."<<std::endl;
@@ -122,7 +129,7 @@ int main(){
         std::cin >> *department;
         printByDepartments(employees,*n,*department);
     };
-    delete employees;
+    delete [] employees;
     delete input;
     delete department;
     delete n;
@@ -151,7 +158,7 @@ void printByAscendingDate(Employees employees[],int n){
             }else if((employees[i].date.years == employees[j].date.years) && (employees[i].date.months > employees[j].date.months)){
                 std::swap(employees[i],employees[j]);
             }else if((employees[i].date.years == employees[j].date.years) && (employees[i].date.months == employees[j].date.months) && (employees[i].date.days > employees[j].date.days)){
-                 std::swap(employees[i],employees[j]);
+                std::swap(employees[i],employees[j]);
             }
         }
     }

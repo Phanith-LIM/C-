@@ -11,21 +11,21 @@ struct Address {
 };
 struct Marks {
     double chem_mark;
-    double maths_mark;
+    double math_mark;
     double phy_mark;
-    double total_mark = chem_mark + maths_mark + phy_mark;
+    double total_mark = chem_mark + math_mark + phy_mark;
     void displayMarks(){
-        std::cout <<"Marks:\t\t" << chem_mark <<", "<< maths_mark <<", "<< phy_mark << std::endl;
+        std::cout <<"Marks:\t\t" << chem_mark <<", "<< math_mark <<", "<< phy_mark << std::endl;
         std::cout <<"Total Marks:\t" << total_mark << std::endl;
     };
-    void getMarts(){
+    void getMarks(){
         std::cout << "\tChemistry Mark: ";
         std::cin >> chem_mark;
         std::cout << "\tMath Mark: ";
-        std::cin >> maths_mark;
+        std::cin >> math_mark;
         std::cout << "\tPhysics Mark: ";
         std::cin >> phy_mark;
-        total_mark = chem_mark + maths_mark + phy_mark;
+        total_mark = chem_mark + math_mark + phy_mark;
     }
 };
 struct Student {
@@ -60,7 +60,7 @@ int main(){
     //Let User Enter marks for each student
     for (int i = 0; i < *sizeStudent; i++){
         std::cout<<"Student ID: "<<student[i].id<<std::endl;
-        student[i].marks.getMarts();
+        student[i].marks.getMarks();
     }
     //Option for user
     std::cout << "a.Display the student information sort by roll no."<<std::endl;
@@ -86,7 +86,7 @@ int main(){
 void sortByID(Student student[],int sizeStudent){
     for (int i = 0; i < sizeStudent; i++){
         for (int j = i + 1; j < sizeStudent; j++){
-            if(student[i].id < student[j].id){
+            if(student[i].id > student[j].id){
                 std::swap(student[i],student[j]);
             }
         }

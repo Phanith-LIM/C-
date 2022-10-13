@@ -14,7 +14,7 @@ struct Student {
     int age;
     Address address;
     void displayInfo(){
-        std::cout << "-------------------------------------"<< std::endl;
+        std::cout << "-----------------------------------------------------"<< std::endl;
         std::cout << "id:\t\t" << id << std::endl;
         std::cout << "Name:\t\t" << name << std::endl;
         std::cout << "Age:\t\t" << age << std::endl;
@@ -23,11 +23,11 @@ struct Student {
 };
 int main(){
     Student student[5] = {
-        {1,"Max Planck",89,5,"Kammakor","Sangkat Svay Por"," Battambang"},
-        {2,"Leonardo da Vinci",67,3,"Ampil Leu","Kampong Siem","Kampong Cham"},
-        {3,"Nicola Tesla",86,007,"Toul Bangka","Khan Russei Kaev","PhnomPenh"},
-        {4,"Albert Einstein",76,12,"Sangkat Slor Kram","Sangkat Slor Kram","Siem Reap"},
-        {5,"Michael Faraday",75,4,"Prek Mohatep ","Sangkat Svay Por","Battambang"},
+        {1,"Max Planck",11,5,"Kammakor","Sangkat Svay Por"," Battambang"},
+        {2,"Leonardo da Vinci",12,3,"Ampil Leu","Kampong Siem","Kampong Cham"},
+        {3,"Nicola Tesla",11,007,"Toul Bangka","Khan Russei Kaev","PhnomPenh"},
+        {4,"Albert Einstein",15,12,"Sangkat Slor Kram","Sangkat Slor Kram","Siem Reap"},
+        {5,"Michael Faraday",18,4,"Prek Mohatep ","Sangkat Svay Por","Battambang"},
     };
     int sizeObject = sizeof(student) / sizeof(student[0]);
     char *input = new char;
@@ -46,17 +46,27 @@ int main(){
         do{
             std::cout << "Enter age : ";
             std::cin >> (*numInput);
+            if((*numInput) < 11 || (*numInput) > 18){
+                std::cout <<"Please age between (11 - 18) years old"<<std::endl;
+            }
         }while((*numInput) < 11 || (*numInput) > 18);
-        for (int i = 0; i < sizeObject; i++) if (student[i].age == (*numInput)) student[i].displayInfo();
+        for (int i = 0; i < sizeObject; i++) {
+            if (student[i].age == (*numInput)) student[i].displayInfo();
+        };
     }else if((*input) == 'b'){
-        for (int i = 0; i < sizeObject; i++) if (student[i].id % 2 == 0) student[i].displayInfo();
+        for (int i = 0; i < sizeObject; i++){
+            if (student[i].id % 2 == 0) student[i].displayInfo();
+        };
     }else if ((*input) == 'c'){
         do{
             std::cout << "Enter roll no : ";
             std::cin >> (*numInput);
+            if((*numInput) > sizeObject){
+                std::cout <<(*numInput) << "does'nt have in date."<<std::endl;
+            }
         }while((*numInput) > sizeObject);
         student[(*numInput) - 1].displayInfo();
-    }
+    }else std::cout << "Please option in menu." <<std::endl;
     delete input;
     delete numInput;
     return 0;
