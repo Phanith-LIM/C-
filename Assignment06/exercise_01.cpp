@@ -35,7 +35,6 @@ int main(){
     */
     if(!numDistinict.empty()){
         std::cout << "Distinict Integer : ";
-        std::sort(numDistinict.begin(),numDistinict.end());
         for(int i : numDistinict){
             std::cout << i << " ";
         }

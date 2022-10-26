@@ -17,7 +17,9 @@ int main(){
         listCountry.push_back((*subInput));
 
     }while((*subInput) != "Done" or (*subInput) == "done");
+
     std::sort(listCountry.begin(),listCountry.end());
+    
     if(!listCountry.empty()){
         std::cout << "COUNTRY : ";
         for(std::string i : listCountry){
