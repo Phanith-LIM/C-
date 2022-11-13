@@ -41,7 +41,6 @@ public:
 
 int main(){
     Stock macBook = Stock("INTC", "Intel", 20.5, 20.35);
-    macBook.setCurrentPrice(20.6);
     std::cout << std::setprecision(2) << "Price Change Percentage: " << macBook.getChangePercent() << "%" << std::endl;
     return 0;
 }

@@ -89,7 +89,7 @@ public:
 };
 int main(){
     Date date1 = Date(30, 9, 2002);
-    Date date2 = Date(30, 12, 2002);
+    Date date2 = Date(30, 10, 2002);
     std::cout << "Date1: " << date1.date_to_string() << std::endl;
     std::cout << "Date2: " << date2.date_to_string() << std::endl;
     std::cout << std::boolalpha << "is_older_than: " << date1.is_older_than(date2) << std::endl;
